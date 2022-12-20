@@ -10,6 +10,8 @@ export class PostFormComponent implements OnInit {
   title = '';
   text = '';
   styleToggle = false;
+  titleSearching = "";
+  @Output() titleSearch: EventEmitter<string> = new EventEmitter<string>();
   @Output() addPostUser: EventEmitter<Post> = new EventEmitter<Post>();
   @ViewChild('myInputText', { static: false }) myInputText: ElementRef = {} as ElementRef;
   @ViewChild('myInputTitle',{static: false}) myinputTitle: ElementRef = {} as ElementRef;
@@ -37,5 +39,8 @@ export class PostFormComponent implements OnInit {
       this.myInputText.nativeElement.style.color = "black";
       this.myinputTitle.nativeElement.style.fontWeight = "normal";
     }
+  }
+  onChangeSearch(change: string) {
+    this.titleSearch.emit(change);
   }
 }

@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+  targetTitle = '';
   posts: Post[] = [
     { title: "React", text: "JavaScript-библиотека для создания пользовательских интерфейсов", id: 1 },
     { title: "Angular", text: "Angular is an app-design framework and development platform for creating efficient and sophisticated single-page apps.", id: 2 },
@@ -17,7 +18,10 @@ export class AppComponent {
     const posts = [event, ...this.posts,]
     this.posts = posts.map((post, idx) => ({ ...post, id: idx + 1 }));
   };
-  removeIdPost(id: number) { this.posts = this.posts.filter((item) => item.id != id) }
+  removeIdPost(id: number) { this.posts = this.posts.filter((item) => item.id != id) };
+  onChangeSearch(event: string) {
+    this.targetTitle = event;
+  }
 }
 
 export interface Post {
