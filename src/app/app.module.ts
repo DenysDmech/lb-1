@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { PostFormComponent } from './post-form/post-form.component';
+import { IpzDirective } from './directives/ipz.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
-    PostFormComponent
+    PostFormComponent,
+    IpzDirective
   ],
   imports: [
     BrowserModule,
